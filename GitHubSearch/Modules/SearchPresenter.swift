@@ -15,6 +15,14 @@ final class SearchPresenter {
 
 extension SearchPresenter: SearchPresenterInterface {
     var viewModelDriver: Driver<SearchViewModel> {
-        return .just(SearchViewModel())
+        return interactor.searchModelDriver.map {
+            return SearchViewModel(cellNetworkModels: $0)
+        }
+    }
+
+    func didTextChangeSearchBar(query: String) {
+        if query != "" {
+            interactor.getRepositories(query: query)
+        }
     }
 }

@@ -9,6 +9,10 @@ class ApplicationManager {
         return window.rootViewController?.topMostViewController
     }
 
+    var host: String {
+        return "https://api.github.com"
+    }
+
     init(window: UIWindow) {
         self.window = window
     }

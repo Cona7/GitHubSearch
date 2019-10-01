@@ -1,7 +1,8 @@
 import UIKit
 import SimpleDataSource
+import SDWebImage
 
-struct RepoCellViewModel {
+struct RepositoryTableViewCellViewModel {
     let imageUrl: URL?
     let title: String
     let ownerName: String
@@ -19,14 +20,14 @@ struct RepoCellViewModel {
     }
 }
 
-extension RepoCellViewModel: DequeuableTableViewCellViewModel {
-    func configure(cell: RepoCell) {
+extension RepositoryTableViewCellViewModel: DequeuableTableViewCellViewModel {
+    func configure(cell: RepositoryTableViewCell) {
         cell.setupCell()
         cell.present(viewModel: self)
     }
 }
 
-class RepoCell: UITableViewCell {
+class RepositoryTableViewCell: UITableViewCell {
     lazy var avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -119,10 +120,16 @@ class RepoCell: UITableViewCell {
     }
 }
 
-extension RepoCell {
-    func present(viewModel: RepoCellViewModel) {
+extension RepositoryTableViewCell {
+    func present(viewModel: RepositoryTableViewCellViewModel) {
         if let imageUrl = viewModel.imageUrl {
-//            self.avatarImageView.af_setImage(withURL: imageUrl)
+            SDWebImageManager
+                .shared
+                .loadImage(with: imageUrl, options: SDWebImageOptions.continueInBackground, progress: nil) { image, _, _, _, _, _  in
+                    if let image = image {
+                        self.avatarImageView.image = image
+                    }
+            }
         } else {
             self.avatarImageView.image = nil
         }
