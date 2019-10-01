@@ -33,6 +33,9 @@
 		1DADB2FD23432675004DEFC0 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DADB2FC23432675004DEFC0 /* RxRelay.framework */; };
 		1DADB2FE23432675004DEFC0 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DADB2FC23432675004DEFC0 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1DADB301234331E1004DEFC0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB300234331E1004DEFC0 /* NavigationController.swift */; };
+		1DADB303234341FA004DEFC0 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB302234341FA004DEFC0 /* FontManager.swift */; };
+		1DADB30523434446004DEFC0 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB30423434446004DEFC0 /* ColorManager.swift */; };
+		1DADB30823434F31004DEFC0 /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB30723434F31004DEFC0 /* RepoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,9 @@
 		1DADB2FA234324F7004DEFC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1DADB2FC23432675004DEFC0 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		1DADB300234331E1004DEFC0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		1DADB302234341FA004DEFC0 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		1DADB30423434446004DEFC0 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		1DADB30723434F31004DEFC0 /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				1D902A1723431679009C500D /* ApplicationManager.swift */,
+				1DADB302234341FA004DEFC0 /* FontManager.swift */,
+				1DADB30423434446004DEFC0 /* ColorManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -253,6 +261,7 @@
 		1DADB2F8234324E3004DEFC0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1DADB30623434F0D004DEFC0 /* Cells */,
 				1DADB2F9234324E9004DEFC0 /* Generics */,
 			);
 			path = UI;
@@ -265,6 +274,14 @@
 				1DADB300234331E1004DEFC0 /* NavigationController.swift */,
 			);
 			path = Generics;
+			sourceTree = "<group>";
+		};
+		1DADB30623434F0D004DEFC0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1DADB30723434F31004DEFC0 /* RepoCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,11 +473,14 @@
 				1DADB2DF234319B5004DEFC0 /* SearchViewModel.swift in Sources */,
 				1D9029E7234315A9009C500D /* AppDelegate.swift in Sources */,
 				1DADB2F3234323D9004DEFC0 /* UIViewController+TopMostViewController.swift in Sources */,
+				1DADB30823434F31004DEFC0 /* RepoCell.swift in Sources */,
 				1DADB2F723432419004DEFC0 /* Wireframe.swift in Sources */,
 				1DADB2FB234324F7004DEFC0 /* ViewController.swift in Sources */,
+				1DADB30523434446004DEFC0 /* ColorManager.swift in Sources */,
 				1DADB2DC234319B5004DEFC0 /* SearchPresenter.swift in Sources */,
 				1D902A1823431679009C500D /* ApplicationManager.swift in Sources */,
 				1DADB2DB234319B5004DEFC0 /* SearchInterfaces.swift in Sources */,
+				1DADB303234341FA004DEFC0 /* FontManager.swift in Sources */,
 				1DADB2DE234319B5004DEFC0 /* SearchInteractor.swift in Sources */,
 				1DADB2E0234319B5004DEFC0 /* SearchWireframe.swift in Sources */,
 			);
