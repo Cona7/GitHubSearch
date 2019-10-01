@@ -7,6 +7,8 @@ final class SearchViewController: ViewController {
 
     var tableViewDataSource = SimpleTableViewDataSource()
 
+    var lastSearchQueryUpdateDate: Date?
+
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
 
@@ -31,7 +33,9 @@ final class SearchViewController: ViewController {
         searchBar.searchBarStyle = .minimal
         searchBar.backgroundColor = .clear
         searchBar.barTintColor = .clear
-        searchBar.placeholder = "Users and Repos"
+        searchBar.placeholder = "Search Repositories"
+
+        searchBar.delegate = self
 
         return searchBar
     }()
@@ -90,7 +94,7 @@ final class SearchViewController: ViewController {
 
         tableView.snp.makeConstraints { make in
             make.left.right.bottom.equalToSuperview()
-            make.top.equalTo(searchBar.snp.bottom)
+            make.top.equalTo(searchBar.snp.bottom).offset(16)
         }
     }
 }
@@ -99,5 +103,18 @@ extension SearchViewController {
     func present(viewModel: SearchViewModel) {
 
         tableViewDataSource.present(viewModels: viewModel.cellViewModels, onTableView: self.tableView)
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let currentDate = Date()
+        self.lastSearchQueryUpdateDate = currentDate
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            if currentDate == self.lastSearchQueryUpdateDate {
+                self.presenter.didTextChangeSearchBar(query: searchText)
+            }
+        }
     }
 }
