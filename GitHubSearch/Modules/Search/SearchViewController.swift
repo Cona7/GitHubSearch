@@ -54,8 +54,6 @@ final class SearchViewController: ViewController {
     override func setupViewController() {
         super.setupViewController()
 
-        navigationController?.isNavigationBarHidden = true
-
         self.view.backgroundColor = .white
 
         presenter
@@ -65,6 +63,8 @@ final class SearchViewController: ViewController {
                     self?.present(viewModel: viewModel)
                 }
         ).disposed(by: disposeBag)
+
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
     }
 
     override func addSubviews() {
@@ -101,6 +101,8 @@ final class SearchViewController: ViewController {
 
 extension SearchViewController {
     func present(viewModel: SearchViewModel) {
+
+        navigationItem.rightBarButtonItem = viewModel.rightBarButton
 
         tableViewDataSource.present(viewModels: viewModel.cellViewModels, onTableView: self.tableView)
     }

@@ -4,7 +4,7 @@ final class SearchWireframe: Wireframe {
     static func setupModule() -> UIViewController {
         let viewController = SearchViewController(nibName: nil, bundle: nil)
         let navigationController = NavigationController(rootViewController: viewController)
-        let wireframe = SearchWireframe(viewController: navigationController)
+        let wireframe = SearchWireframe(viewController: viewController)
 
         let interactor = SearchInteractor()
         let presenter = SearchPresenter(wireframe: wireframe, interactor: interactor)
@@ -15,6 +15,10 @@ final class SearchWireframe: Wireframe {
 }
 
 extension SearchWireframe: SearchWireframeInterface {
-    func navigate(to option: SearchNavigationOption) {
+    func navigate(to option: SearchNavigationOption, delegate: SearchFilterDelegate) {
+        switch option {
+        case .filter:
+            navigationController?.pushViewController(FilterWireframe.setupModule(delegate: delegate), animated: true)
+        }
     }
 }
