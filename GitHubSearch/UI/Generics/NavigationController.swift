@@ -5,9 +5,11 @@ class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationBar.tintColor = .white
-        navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationBar.tintColor = .dark
+        navigationBar.titleTextAttributes = [.foregroundColor: UIColor.dark]
+        navigationBar.barTintColor = .light
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = .black
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
     }
 }

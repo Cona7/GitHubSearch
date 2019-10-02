@@ -1,6 +1,6 @@
 import Foundation
 
-struct RepoNetworkModel: Codable {
+struct RepositoryNetworkModel: Codable {
     let totalCount: Int
     let isResultIncomplete: Bool
     let items: [RepositoryModel]

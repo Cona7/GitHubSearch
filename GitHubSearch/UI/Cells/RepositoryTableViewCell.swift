@@ -8,15 +8,17 @@ struct RepositoryTableViewCellViewModel {
     let ownerName: String
     let info: String
 
+    var didTapImage: (() -> Void)
     var didTapCell: (() -> Void)?
 
-    init(imageUrl: URL?, title: String, ownerName: String, forksCount: Int, watchersCount: Int, issuesCount: Int, didTapCell: (() -> Void)?) {
+    init(imageUrl: URL?, title: String, ownerName: String, forksCount: Int, watchersCount: Int, issuesCount: Int, didTapCell: (() -> Void)?, didTapImage: @escaping (() -> Void)) {
         self.imageUrl = imageUrl
         self.title = title
         self.ownerName = ownerName
         self.info = "forks: \(String(forksCount)), watchers: \(String(watchersCount)), issues: \(String(issuesCount))"
 
         self.didTapCell = didTapCell
+        self.didTapImage = didTapImage
     }
 }
 
@@ -28,6 +30,9 @@ extension RepositoryTableViewCellViewModel: DequeuableTableViewCellViewModel {
 }
 
 class RepositoryTableViewCell: UITableViewCell {
+
+    var viewModel: RepositoryTableViewCellViewModel?
+
     lazy var avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -35,6 +40,16 @@ class RepositoryTableViewCell: UITableViewCell {
         imageView.layer.masksToBounds = true
         imageView.backgroundColor = .gray
         return imageView
+    }()
+
+    lazy var button: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 24
+        button.backgroundColor = .clear
+
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+
+        return button
     }()
 
     lazy var titleLabel: UILabel = {
@@ -76,14 +91,13 @@ class RepositoryTableViewCell: UITableViewCell {
         self.addSubviews()
         self.layout()
 
-        contentView.translatesAutoresizingMaskIntoConstraints = true
-
         self.backgroundColor = .clear
         self.selectionStyle = .none
     }
 
     func addSubviews() {
         self.addSubview(avatarImageView)
+        self.addSubview(button)
         self.addSubview(titleLabel)
         self.addSubview(ownerLabel)
         self.addSubview(infoLabel)
@@ -92,6 +106,11 @@ class RepositoryTableViewCell: UITableViewCell {
 
     func layout() {
         self.avatarImageView.snp.makeConstraints { make in
+            make.left.top.equalToSuperview().inset(UIEdgeInsets(top: 16, left: 24, bottom: 0, right: 0))
+            make.size.equalTo(48)
+        }
+
+        self.button.snp.makeConstraints { make in
             make.left.top.equalToSuperview().inset(UIEdgeInsets(top: 16, left: 24, bottom: 0, right: 0))
             make.size.equalTo(48)
         }
@@ -118,10 +137,17 @@ class RepositoryTableViewCell: UITableViewCell {
             make.height.equalTo(1)
         }
     }
+
+    @objc
+    func didTapButton() {
+        viewModel?.didTapImage()
+    }
 }
 
 extension RepositoryTableViewCell {
     func present(viewModel: RepositoryTableViewCellViewModel) {
+        self.viewModel = viewModel
+
         if let imageUrl = viewModel.imageUrl {
             SDWebImageManager
                 .shared
