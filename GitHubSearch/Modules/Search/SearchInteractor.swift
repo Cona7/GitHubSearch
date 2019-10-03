@@ -4,15 +4,15 @@ import RxRelay
 import RxCocoa
 
 final class SearchInteractor {
-    private var searchModelVariable = BehaviorRelay(value: [RepositoryModel]())
+    private var searchModel = BehaviorRelay(value: [Repository]())
 
     private var query: String = ""
 
     private let disposeBag = DisposeBag()
 }
 extension SearchInteractor: SearchInteractorInterface {
-    var searchModelDriver: Driver<[RepositoryModel]> {
-        return searchModelVariable.asDriver()
+    var searchModelDriver: Driver<[Repository]> {
+        return searchModel.asDriver()
     }
 
     func getEntities() {
@@ -30,7 +30,7 @@ extension SearchInteractor: SearchInteractorInterface {
                 .subscribe { [unowned self] respone in
                     switch respone {
                     case .success(let value):
-                        self.searchModelVariable.accept(value.items)
+                        self.searchModel.accept(value.items)
                     case .error(let error):
                         print(error)
                     }

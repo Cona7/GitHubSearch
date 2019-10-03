@@ -13,3 +13,6 @@
 [submodule "Carthage/Checkouts/SDWebImage"]
 	path = Carthage/Checkouts/SDWebImage
 	url = https://github.com/SDWebImage/SDWebImage.git
+[submodule "Carthage/Checkouts/TTTAttributedLabel"]
+	path = Carthage/Checkouts/TTTAttributedLabel
+	url = https://github.com/TTTAttributedLabel/TTTAttributedLabel.git

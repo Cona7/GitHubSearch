@@ -15,10 +15,14 @@ final class SearchWireframe: Wireframe {
 }
 
 extension SearchWireframe: SearchWireframeInterface {
-    func navigate(to option: SearchNavigationOption, delegate: SearchFilterDelegate) {
+    func navigate(to option: SearchNavigationOption) {
         switch option {
-        case .filter:
+        case .filter(let delegate):
             navigationController?.pushViewController(FilterWireframe.setupModule(delegate: delegate), animated: true)
+        case .repoDetails(let repositoryModel):
+            navigationController?.pushViewController(DetailsWireframe.setupModule(detailsState: .repository(repositoryModel: repositoryModel)), animated: true)
+        case .userDetails(let owner):
+            navigationController?.pushViewController(DetailsWireframe.setupModule(detailsState: .user(owner: owner)), animated: true)
         }
     }
 }

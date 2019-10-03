@@ -28,16 +28,16 @@ extension SearchPresenter: SearchPresenterInterface {
 }
 
 extension SearchPresenter: SearchViewModelDelegate {
-
     func didTapFilter() {
-        wireframe.navigate(to: .filter, delegate: self)
+        wireframe.navigate(to: .filter(delegate: self))
     }
 
-    func didTapRepository(model: RepositoryModel) {
-        print(model)
+    func didTapRepository(model: Repository) {
+        wireframe.navigate(to: .repoDetails(repositoryModel: model))
     }
 
-    func didTapCellAvatarImage(model: RepositoryModel) {
+    func didTapCellAvatarImage(model: Repository) {
+        wireframe.navigate(to: .userDetails(owner: model.owner))
       }
 }
 
