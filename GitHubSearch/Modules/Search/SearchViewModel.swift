@@ -6,7 +6,7 @@ struct SearchViewModel {
 
     var cellViewModels: [AnyDequeuableTableViewCellViewModel]
 
-    init(cellNetworkModels: [RepositoryModel], delegate: SearchViewModelDelegate) {
+    init(cellNetworkModels: [Repository], delegate: SearchViewModelDelegate) {
         self.rightBarButton = BarButtonItem.create(image: #imageLiteral(resourceName: "filter"), withTapCallback: { [weak delegate] in
             delegate?.didTapFilter() })
 

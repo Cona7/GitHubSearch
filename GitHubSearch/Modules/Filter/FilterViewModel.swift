@@ -11,14 +11,6 @@ struct FilterViewModel {
 
         cellViewModels = [
             FilterTableViewCellViewModel(
-                name: "Search by",
-                segmentedControlItems: [SearchType.repositories.title, SearchType.users.title],
-                selectedSegmentedIndex: filterParameters.searchBy.rawValue,
-                filterType: .search,
-                didChangeValue: { [weak delegate] index, filterType in
-                    delegate?.didChangeValue(index: index, filterType: filterType) }
-            ).tableViewPresentable,
-            FilterTableViewCellViewModel(
                 name: "Sort by",
                 segmentedControlItems: [SortType.stars.title, SortType.forks.title, SortType.updated.title],
                 selectedSegmentedIndex: filterParameters.sortBy.rawValue,
@@ -28,4 +20,4 @@ struct FilterViewModel {
             ).tableViewPresentable
         ]
     }
-}
+}   

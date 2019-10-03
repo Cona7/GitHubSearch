@@ -8,7 +8,7 @@ class NavigationController: UINavigationController {
         navigationBar.tintColor = .dark
         navigationBar.titleTextAttributes = [.foregroundColor: UIColor.dark]
         navigationBar.barTintColor = .light
-        navigationBar.isTranslucent = false
+        navigationBar.isTranslucent = true
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
     }

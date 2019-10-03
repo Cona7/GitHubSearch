@@ -64,7 +64,7 @@ final class SearchViewController: ViewController {
                 }
         ).disposed(by: disposeBag)
 
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
     }
 
     override func addSubviews() {
@@ -87,7 +87,7 @@ final class SearchViewController: ViewController {
         }
 
         searchBar.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
+            make.left.right.equalToSuperview().inset(16)
             make.top.equalTo(label.snp.bottom).offset(8)
             make.height.equalTo(32)
         }

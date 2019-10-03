@@ -38,4 +38,18 @@ class SearchNetworkManager {
             return .error(error)
         }
     }
+
+    static func getRepositoryDetails(repoName: String, owner: String) -> Single<RepositoryDetails> {
+        return NetworkManager
+            .performRequest(
+                url: ApplicationManager.shared.host + "/repos/\(owner)/\(repoName)"
+        )
+    }
+
+    static func getUserDetails(owner: Owner) -> Single<UserDetails> {
+        return NetworkManager
+            .performRequest(
+                url: ApplicationManager.shared.host + "/users/\(owner.name)"
+        )
+    }
 }

@@ -2,11 +2,13 @@ import RxCocoa
 import UIKit
 
 enum SearchNavigationOption {
-    case filter
+    case filter(delegate: SearchFilterDelegate)
+    case repoDetails(repositoryModel: Repository)
+    case userDetails(owner: Owner)
 }
 
 protocol SearchWireframeInterface {
-    func navigate(to option: SearchNavigationOption, delegate: SearchFilterDelegate)
+    func navigate(to option: SearchNavigationOption)
 }
 
 protocol SearchPresenterInterface {
@@ -16,7 +18,7 @@ protocol SearchPresenterInterface {
 }
 
 protocol SearchInteractorInterface {
-    var searchModelDriver: Driver<[RepositoryModel]> { get }
+    var searchModelDriver: Driver<[Repository]> { get }
 
     func getEntities(query: String)
     func getEntities()
@@ -25,8 +27,8 @@ protocol SearchInteractorInterface {
 protocol SearchViewModelDelegate: class {
     func didTapFilter()
 
-    func didTapRepository(model: RepositoryModel)
-    func didTapCellAvatarImage(model: RepositoryModel)
+    func didTapRepository(model: Repository)
+    func didTapCellAvatarImage(model: Repository)
 }
 
 protocol SearchFilterDelegate: class {
