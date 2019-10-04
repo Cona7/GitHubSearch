@@ -6,10 +6,21 @@ final class SearchPresenter {
     private let interactor: SearchInteractorInterface
     private let wireframe: SearchWireframeInterface
 
+    private let disposeBag = DisposeBag()
+
     init(wireframe: SearchWireframeInterface,
          interactor: SearchInteractorInterface) {
         self.wireframe = wireframe
         self.interactor = interactor
+
+        interactor
+               .errorDriver
+               .drive(
+                   onNext: { [unowned self] error in
+                       self.wireframe.present(error: error)
+                   }
+               ).disposed(by: disposeBag)
+
     }
 }
 

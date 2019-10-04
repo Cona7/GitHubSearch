@@ -5,6 +5,7 @@ import RxCocoa
 
 final class SearchInteractor {
     private var searchModel = BehaviorRelay(value: [Repository]())
+    private let errorSubject = PublishSubject<Error>()
 
     private var query: String = ""
 
@@ -13,6 +14,13 @@ final class SearchInteractor {
 extension SearchInteractor: SearchInteractorInterface {
     var searchModelDriver: Driver<[Repository]> {
         return searchModel.asDriver()
+    }
+
+    var errorDriver: Driver<Error> {
+        return errorSubject
+            .asDriver {
+                return Driver.just($0)
+        }
     }
 
     func getEntities() {
@@ -32,7 +40,7 @@ extension SearchInteractor: SearchInteractorInterface {
                     case .success(let value):
                         self.searchModel.accept(value.items)
                     case .error(let error):
-                        print(error)
+                        self.errorSubject.onNext(error)
                     }
             }.disposed(by: disposeBag)
         }
