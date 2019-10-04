@@ -11,11 +11,11 @@ struct RepositoryTableViewCellViewModel {
     var didTapImage: (() -> Void)
     var didTapCell: (() -> Void)?
 
-    init(imageUrl: URL?, title: String, ownerName: String, forksCount: Int, watchersCount: Int, issuesCount: Int, didTapCell: (() -> Void)?, didTapImage: @escaping (() -> Void)) {
+    init(imageUrl: URL?, title: String, ownerName: String, info: String, didTapCell: (() -> Void)?, didTapImage: @escaping (() -> Void)) {
         self.imageUrl = imageUrl
         self.title = title
         self.ownerName = ownerName
-        self.info = "forks: \(String(forksCount)), watchers: \(String(watchersCount)), issues: \(String(issuesCount))"
+        self.info = info
 
         self.didTapCell = didTapCell
         self.didTapImage = didTapImage

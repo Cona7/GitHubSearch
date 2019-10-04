@@ -4,7 +4,7 @@ import RxRelay
 import RxCocoa
 
 final class SearchInteractor {
-    private var searchModel = BehaviorRelay(value: [Repository]())
+    private var searchModel = BehaviorRelay(value: SearchModel())
     private let errorSubject = PublishSubject<Error>()
 
     private var query: String = ""
@@ -12,7 +12,7 @@ final class SearchInteractor {
     private let disposeBag = DisposeBag()
 }
 extension SearchInteractor: SearchInteractorInterface {
-    var searchModelDriver: Driver<[Repository]> {
+    var searchModelDriver: Driver<SearchModel> {
         return searchModel.asDriver()
     }
 
@@ -32,13 +32,46 @@ extension SearchInteractor: SearchInteractorInterface {
 
         let filterParameters = FilterParametersDataSource.shared.filterParameters
 
+        let shouldClearQuery = filterParameters.searchBy != searchModel.value.state
+
+        guard !shouldClearQuery else {
+            return searchModel.accept(
+                SearchModel(
+                    users: self.searchModel.value.users,
+                    repositories: self.searchModel.value.repositories,
+                    state: filterParameters.searchBy,
+                    searchLabel: searchModel.value.searchLabel,
+                    shouldClearQuery: shouldClearQuery)
+            )
+        }
+
+        if query == "" {
+            return
+        }
+
         if filterParameters.searchBy == .repositories {
             SearchNetworkManager
                 .getRepositories(query: query, sort: filterParameters.sortBy.query)
                 .subscribe { [unowned self] respone in
                     switch respone {
                     case .success(let value):
-                        self.searchModel.accept(value.items)
+                        self.searchModel.accept(SearchModel(users: self.searchModel.value.users, repositories: value.items, state: filterParameters.searchBy, shouldClearQuery: shouldClearQuery))
+                    case .error(let error):
+                        self.errorSubject.onNext(error)
+                    }
+            }.disposed(by: disposeBag)
+        } else {
+            SearchNetworkManager
+                .getUsers(query: query)
+                .subscribe { [unowned self] respone in
+                    switch respone {
+                    case .success(let value):
+                        self.searchModel.accept(
+                            SearchModel(users: value.items,
+                                        repositories: self.searchModel.value.repositories,
+                                        state: filterParameters.searchBy,
+                                        shouldClearQuery: shouldClearQuery)
+                        )
                     case .error(let error):
                         self.errorSubject.onNext(error)
                     }

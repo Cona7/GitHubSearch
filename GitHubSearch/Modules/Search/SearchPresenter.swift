@@ -27,14 +27,12 @@ final class SearchPresenter {
 extension SearchPresenter: SearchPresenterInterface {
     var viewModelDriver: Driver<SearchViewModel> {
         return interactor.searchModelDriver.map {
-            return SearchViewModel(cellNetworkModels: $0, delegate: self)
+            return SearchViewModel(model: $0, delegate: self)
         }
     }
 
     func didTextChangeSearchBar(query: String) {
-        if query != "" {
-            interactor.getEntities(query: query)
-        }
+        interactor.getEntities(query: query)
     }
 }
 
@@ -46,6 +44,10 @@ extension SearchPresenter: SearchViewModelDelegate {
     func didTapRepository(model: Repository) {
         wireframe.navigate(to: .repoDetails(repositoryModel: model))
     }
+
+    func didTapUser(model: Owner) {
+         wireframe.navigate(to: .userDetails(owner: model))
+     }
 
     func didTapCellAvatarImage(model: Repository) {
         wireframe.navigate(to: .userDetails(owner: model.owner))

@@ -25,7 +25,6 @@ final class DetailsInteractor {
             .subscribe { [unowned self] respone in
                 switch respone {
                 case .success(let value):
-                    print(value)
                     self.detailsModel.accept(DetailsModel(state: self.detailsModel.value.state, repositoryDetails: value))
                 case .error(let error):
                     print(error)
@@ -39,7 +38,6 @@ final class DetailsInteractor {
              .subscribe { [unowned self] respone in
                  switch respone {
                  case .success(let value):
-                     print(value)
                      self.detailsModel.accept(DetailsModel(state: self.detailsModel.value.state, userDetails: value))
                  case .error(let error):
                      print(error)

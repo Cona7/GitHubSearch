@@ -17,7 +17,6 @@ class NetworkManager {
                 )
                 .validate()
                 .responseData { response in
-                    print(response)
                     observer(.success(response))
             }
 
