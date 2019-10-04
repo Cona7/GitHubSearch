@@ -5,17 +5,12 @@ import Foundation
 class ResponseMapper {
     static func codableModel<T: Codable>(from data: Data) -> Single<T> {
         do {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
-
             let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .formatted(formatter)
 
             let response = try decoder.decode(T.self, from: data)
 
             return .just(response)
         } catch let error {
-            print(error)
             return .error(error)
         }
     }

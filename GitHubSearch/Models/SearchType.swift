@@ -19,4 +19,13 @@ enum SearchType: Int {
             return "users"
         }
     }
+
+    var placeholder: String {
+        switch self {
+        case .repositories:
+            return "Search Repositories"
+        case .users:
+            return "Search Users"
+        }
+    }
 }

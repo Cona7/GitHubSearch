@@ -18,7 +18,7 @@ protocol SearchPresenterInterface {
 }
 
 protocol SearchInteractorInterface {
-    var searchModelDriver: Driver<[Repository]> { get }
+    var searchModelDriver: Driver<SearchModel> { get }
     var errorDriver: Driver<Error> { get }
 
     func getEntities(query: String)
@@ -30,6 +30,8 @@ protocol SearchViewModelDelegate: class {
 
     func didTapRepository(model: Repository)
     func didTapCellAvatarImage(model: Repository)
+
+    func didTapUser(model: Owner)
 }
 
 protocol SearchFilterDelegate: class {

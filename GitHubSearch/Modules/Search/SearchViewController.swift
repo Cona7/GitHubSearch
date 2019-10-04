@@ -22,7 +22,6 @@ final class SearchViewController: ViewController {
 
         label.font = .boldFont(size: 36)
         label.textColor = .darkText
-        label.text = "Search GitHub"
 
         return label
     }()
@@ -33,7 +32,6 @@ final class SearchViewController: ViewController {
         searchBar.searchBarStyle = .minimal
         searchBar.backgroundColor = .clear
         searchBar.barTintColor = .clear
-        searchBar.placeholder = "Search Repositories"
 
         searchBar.delegate = self
 
@@ -65,6 +63,11 @@ final class SearchViewController: ViewController {
         ).disposed(by: disposeBag)
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+
+        view.addGestureRecognizer(tap)
     }
 
     override func addSubviews() {
@@ -97,12 +100,24 @@ final class SearchViewController: ViewController {
             make.top.equalTo(searchBar.snp.bottom).offset(16)
         }
     }
+
+    @objc
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 extension SearchViewController {
     func present(viewModel: SearchViewModel) {
+        label.text = viewModel.searchLabel
+
+        searchBar.placeholder = viewModel.searchPlaceholder
 
         navigationItem.rightBarButtonItem = viewModel.rightBarButton
+
+        if viewModel.shouldClearQuery {
+            searchBar.text = ""
+        }
 
         tableViewDataSource.present(viewModels: viewModel.cellViewModels, onTableView: self.tableView)
     }
@@ -118,5 +133,9 @@ extension SearchViewController: UISearchBarDelegate {
                 self.presenter.didTextChangeSearchBar(query: searchText)
             }
         }
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }

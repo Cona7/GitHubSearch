@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "GitHub-Mark.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "GitHub-Mark.png",
       "scale" : "2x"
     },
     {

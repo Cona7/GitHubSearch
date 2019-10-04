@@ -4,7 +4,7 @@ import Foundation
 class SearchNetworkManager {
     struct Query: Encodable {
         let query: String
-        let sort: String
+        let sort: String?
 
         // swiftlint:disable nesting
         private enum CodingKeys: String, CodingKey {
@@ -24,7 +24,7 @@ class SearchNetworkManager {
         return parameter
     }
 
-    static func getRepositories(query: String, sort: String) -> Single<RepositoryNetworkModel> {
+    static func getRepositories(query: String, sort: String) -> Single<RepositoryListNetworkModel> {
         do {
             let parameters = try self.encode(Query(query: query, sort: sort))
 
@@ -38,6 +38,21 @@ class SearchNetworkManager {
             return .error(error)
         }
     }
+
+    static func getUsers(query: String) -> Single<UserListNetworkModel> {
+          do {
+            let parameters = try self.encode(Query(query: query, sort: nil))
+
+              return NetworkManager
+                  .performRequest(
+                      url: ApplicationManager.shared.host + "/search/users",
+                      method: .get,
+                      parameters: parameters
+              )
+          } catch let error {
+              return .error(error)
+          }
+      }
 
     static func getRepositoryDetails(repoName: String, owner: String) -> Single<RepositoryDetails> {
         return NetworkManager
