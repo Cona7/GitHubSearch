@@ -7,7 +7,7 @@ enum SearchNavigationOption {
     case userDetails(owner: Owner)
 }
 
-protocol SearchWireframeInterface {
+protocol SearchWireframeInterface: WireframeInterface {
     func navigate(to option: SearchNavigationOption)
 }
 
@@ -19,6 +19,7 @@ protocol SearchPresenterInterface {
 
 protocol SearchInteractorInterface {
     var searchModelDriver: Driver<[Repository]> { get }
+    var errorDriver: Driver<Error> { get }
 
     func getEntities(query: String)
     func getEntities()

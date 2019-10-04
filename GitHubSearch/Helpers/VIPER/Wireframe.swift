@@ -38,12 +38,11 @@ extension UINavigationController {
 
 extension Wireframe: WireframeInterface {
     @objc
-    func present(error: Error) {
+   func present(error: Error) {
 
-        // TODO presentable error
-        let alertController = UIAlertController(title: "Error",
-                                                message: "Unexpected error occured",
-                                                preferredStyle: .actionSheet)
+        // TODO error Handling
+
+        let alertController = UIAlertController(title: "Error", message: "Unexpected error occurred", preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
 
         viewController.topMostViewController.present(alertController, animated: true, completion: nil)
