@@ -1,8 +1,4 @@
 github "Rep2/SimpleDataSource" ~> 1.0
 
-github "SnapKit/SnapKit" ~> 5.0.0
-github "ReactiveX/RxSwift" ~> 5.0
-github "Alamofire/Alamofire" ~> 4.7
-github "SDWebImage/SDWebImage"
 github "TTTAttributedLabel/TTTAttributedLabel" ~> 2.0
 
