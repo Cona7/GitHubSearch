@@ -60,7 +60,7 @@ final class SearchViewController: ViewController {
                 onNext: { [weak self] viewModel in
                     self?.present(viewModel: viewModel)
                 }
-        ).disposed(by: disposeBag)
+            ).disposed(by: disposeBag)
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
 
@@ -109,11 +109,11 @@ final class SearchViewController: ViewController {
 
 extension SearchViewController {
     func present(viewModel: SearchViewModel) {
+        navigationItem.rightBarButtonItem = viewModel.rightBarButton
+
         label.text = viewModel.searchLabel
 
         searchBar.placeholder = viewModel.searchPlaceholder
-
-        navigationItem.rightBarButtonItem = viewModel.rightBarButton
 
         if viewModel.shouldClearQuery {
             searchBar.text = ""
@@ -125,16 +125,8 @@ extension SearchViewController {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let currentDate = Date()
-        self.lastSearchQueryUpdateDate = currentDate
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            if currentDate == self.lastSearchQueryUpdateDate {
-                self.presenter.didTextChangeSearchBar(query: searchText)
-            }
-        }
+        self.presenter.didTextChangeSearchBar(query: searchText)
     }
-
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }

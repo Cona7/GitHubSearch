@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0F4D3B2554473B00B2A20C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0F4D3A2554473B00B2A20C /* RxSwift */; };
+		1D0F4D3D2554473B00B2A20C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0F4D3C2554473B00B2A20C /* RxCocoa */; };
+		1D0F4D3F2554473B00B2A20C /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0F4D3E2554473B00B2A20C /* RxRelay */; };
 		1D2B6B2923439F940052116A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B6B2823439F940052116A /* NetworkError.swift */; };
 		1D2B6B2C2343ABA40052116A /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B6B2B2343ABA40052116A /* UserDetails.swift */; };
 		1D2B6B362343F0DE0052116A /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B6B352343F0DE0052116A /* BarButton.swift */; };
@@ -65,9 +68,6 @@
 		1DADB3102343771D004DEFC0 /* ResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB30F2343771D004DEFC0 /* ResponseMapper.swift */; };
 		1DADB31223437875004DEFC0 /* NetworkErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB31123437875004DEFC0 /* NetworkErrorResponse.swift */; };
 		1DADB31523437D05004DEFC0 /* RepositoryListNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB31423437D05004DEFC0 /* RepositoryListNetworkModel.swift */; };
-		1DCD23E62550BB90009FB24A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCD23E52550BB90009FB24A /* RxSwift */; };
-		1DCD23E82550BB90009FB24A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCD23E72550BB90009FB24A /* RxCocoa */; };
-		1DCD23EA2550BB90009FB24A /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCD23E92550BB90009FB24A /* RxRelay */; };
 		1DCD23F02550BC3F009FB24A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCD23EF2550BC3F009FB24A /* Alamofire */; };
 		1DCD23F62550BCD7009FB24A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCD23F52550BCD7009FB24A /* SDWebImage */; };
 		1DCD23FC2550BD28009FB24A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCD23FB2550BD28009FB24A /* SnapKit */; };
@@ -168,13 +168,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DCD23EA2550BB90009FB24A /* RxRelay in Frameworks */,
-				1DCD23E82550BB90009FB24A /* RxCocoa in Frameworks */,
+				1D0F4D3D2554473B00B2A20C /* RxCocoa in Frameworks */,
 				1DCD23FC2550BD28009FB24A /* SnapKit in Frameworks */,
+				1D0F4D3F2554473B00B2A20C /* RxRelay in Frameworks */,
 				1D8157772345EC7E00D55352 /* TTTAttributedLabel.framework in Frameworks */,
+				1D0F4D3B2554473B00B2A20C /* RxSwift in Frameworks */,
 				1DCD23F02550BC3F009FB24A /* Alamofire in Frameworks */,
 				1DCD23F62550BCD7009FB24A /* SDWebImage in Frameworks */,
-				1DCD23E62550BB90009FB24A /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,12 +482,12 @@
 			);
 			name = GitHubSearch;
 			packageProductDependencies = (
-				1DCD23E52550BB90009FB24A /* RxSwift */,
-				1DCD23E72550BB90009FB24A /* RxCocoa */,
-				1DCD23E92550BB90009FB24A /* RxRelay */,
 				1DCD23EF2550BC3F009FB24A /* Alamofire */,
 				1DCD23F52550BCD7009FB24A /* SDWebImage */,
 				1DCD23FB2550BD28009FB24A /* SnapKit */,
+				1D0F4D3A2554473B00B2A20C /* RxSwift */,
+				1D0F4D3C2554473B00B2A20C /* RxCocoa */,
+				1D0F4D3E2554473B00B2A20C /* RxRelay */,
 			);
 			productName = GitHubSearch;
 			productReference = 1D9029E3234315A9009C500D /* GitHubSearch.app */;
@@ -562,10 +562,10 @@
 			);
 			mainGroup = 1D9029DA234315A9009C500D;
 			packageReferences = (
-				1DCD23E42550BB8F009FB24A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				1DCD23EE2550BC3F009FB24A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1DCD23F42550BCD7009FB24A /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				1DCD23FA2550BD28009FB24A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1D0F4D392554473B00B2A20C /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 1D9029E4234315A9009C500D /* Products */;
 			projectDirPath = "";
@@ -1033,12 +1033,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1DCD23E42550BB8F009FB24A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		1D0F4D392554473B00B2A20C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 5.1.1;
 			};
 		};
 		1DCD23EE2550BC3F009FB24A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
@@ -1046,7 +1046,7 @@
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.7.0;
+				minimumVersion = 4.9.0;
 			};
 		};
 		1DCD23F42550BCD7009FB24A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
@@ -1068,19 +1068,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1DCD23E52550BB90009FB24A /* RxSwift */ = {
+		1D0F4D3A2554473B00B2A20C /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1DCD23E42550BB8F009FB24A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 1D0F4D392554473B00B2A20C /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
-		1DCD23E72550BB90009FB24A /* RxCocoa */ = {
+		1D0F4D3C2554473B00B2A20C /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1DCD23E42550BB8F009FB24A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 1D0F4D392554473B00B2A20C /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		1DCD23E92550BB90009FB24A /* RxRelay */ = {
+		1D0F4D3E2554473B00B2A20C /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1DCD23E42550BB8F009FB24A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 1D0F4D392554473B00B2A20C /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
 		};
 		1DCD23EF2550BC3F009FB24A /* Alamofire */ = {

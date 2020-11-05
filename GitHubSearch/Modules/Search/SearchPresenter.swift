@@ -8,18 +8,20 @@ final class SearchPresenter {
 
     private let disposeBag = DisposeBag()
 
+    private var lastSearchQueryUpdateDate: Date?
+
     init(wireframe: SearchWireframeInterface,
          interactor: SearchInteractorInterface) {
         self.wireframe = wireframe
         self.interactor = interactor
 
         interactor
-               .errorDriver
-               .drive(
-                   onNext: { [unowned self] error in
-                       self.wireframe.present(error: error)
-                   }
-               ).disposed(by: disposeBag)
+            .errorDriver
+            .drive(
+                onNext: { [unowned self] error in
+                    self.wireframe.present(error: error)
+                }
+            ).disposed(by: disposeBag)
 
     }
 }
@@ -32,7 +34,14 @@ extension SearchPresenter: SearchPresenterInterface {
     }
 
     func didTextChangeSearchBar(query: String) {
-        interactor.getEntities(query: query)
+        let currentDate = Date()
+        self.lastSearchQueryUpdateDate = currentDate
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            if currentDate == self.lastSearchQueryUpdateDate {
+                self.interactor.getEntities(query: query)
+            }
+        }
     }
 }
 
@@ -46,12 +55,12 @@ extension SearchPresenter: SearchViewModelDelegate {
     }
 
     func didTapUser(model: Owner) {
-         wireframe.navigate(to: .userDetails(owner: model))
-     }
+        wireframe.navigate(to: .userDetails(owner: model))
+    }
 
     func didTapCellAvatarImage(model: Repository) {
         wireframe.navigate(to: .userDetails(owner: model.owner))
-      }
+    }
 }
 
 extension SearchPresenter: SearchFilterDelegate {
