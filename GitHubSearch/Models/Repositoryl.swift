@@ -1,12 +1,12 @@
 import Foundation
 
-struct RepositoryNetworkModel: Codable {
+struct Repository: Codable {
     let name: String
-    let owner: OwnerNetworkModel
+    let owner: Owner
     let forks: Int
     let watchers: Int
     let issues: Int
-    
+
     enum CodingKeys: String, CodingKey {
         case name
         case owner

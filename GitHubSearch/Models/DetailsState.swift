@@ -1,4 +1,6 @@
+import Foundation
+
 enum DetailsState {
-    case repository(repositoryModel: Repository)
-    case user(owner: Owner)
+    case repository(name: String, username: String)
+    case user(name: String, avatarURL: URL?)
 }

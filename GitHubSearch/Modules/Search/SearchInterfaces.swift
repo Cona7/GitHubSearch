@@ -3,8 +3,8 @@ import UIKit
 
 enum SearchNavigationOption {
     case filter(delegate: SearchFilterDelegate)
-    case repoDetails(repositoryModel: Repository)
-    case userDetails(owner: Owner)
+    case repoDetails(name: String, username: String)
+    case userDetails(name: String, avatarURL: URL?)
 }
 
 protocol SearchWireframeInterface: WireframeInterface {
@@ -28,10 +28,8 @@ protocol SearchInteractorInterface {
 protocol SearchViewModelDelegate: class {
     func didTapFilter()
 
-    func didTapRepository(model: Repository)
-    func didTapCellAvatarImage(model: Repository)
-
-    func didTapUser(model: Owner)
+    func didTapCell(model: SearchListModel, state: SearchType)
+    func didTapCellAvatarImage(model: SearchListModel, state: SearchType)
 }
 
 protocol SearchFilterDelegate: class {

@@ -17,7 +17,7 @@ extension DetailsWireframe: DetailsWireframeInterface {
     func navigate(to option: DetailsNavigationOption) {
         switch option {
         case .owner(let owner):
-            navigationController?.pushViewController(DetailsWireframe.setupModule(detailsState: .user(owner: owner)), animated: true)
+            navigationController?.pushViewController(DetailsWireframe.setupModule(detailsState: .user(name: owner.name, avatarURL: owner.avatarURL)), animated: true)
         }
     }
 }

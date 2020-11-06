@@ -19,10 +19,10 @@ extension SearchWireframe: SearchWireframeInterface {
         switch option {
         case .filter(let delegate):
             navigationController?.pushViewController(FilterWireframe.setupModule(delegate: delegate), animated: true)
-        case .repoDetails(let repositoryModel):
-            navigationController?.pushViewController(DetailsWireframe.setupModule(detailsState: .repository(repositoryModel: repositoryModel)), animated: true)
-        case .userDetails(let owner):
-            navigationController?.pushViewController(DetailsWireframe.setupModule(detailsState: .user(owner: owner)), animated: true)
+        case .repoDetails(let name, let username):
+            navigationController?.pushViewController(DetailsWireframe.setupModule(detailsState: .repository(name: name, username: username)), animated: true)
+        case .userDetails(let name, let avatarURL):
+            navigationController?.pushViewController(DetailsWireframe.setupModule(detailsState: .user(name: name, avatarURL: avatarURL)), animated: true)
         }
     }
 }

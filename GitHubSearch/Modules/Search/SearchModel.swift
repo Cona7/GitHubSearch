@@ -1,6 +1,5 @@
 struct SearchModel {
-    var users: [Owner] = []
-    var repositories: [Repository] = []
+    var searchListModel: [SearchListModel] = []
 
     var state: SearchType = .repositories
 

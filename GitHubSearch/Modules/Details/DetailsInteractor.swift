@@ -12,10 +12,10 @@ final class DetailsInteractor {
         detailsModel = BehaviorRelay(value: DetailsModel(state: detailsState))
 
         switch detailsState {
-        case .repository(let repositoryModel):
-            self.getRepositoryDetails(name: repositoryModel.name, owner: repositoryModel.owner.name)
-        case .user(let owner):
-            getUserDetails(owner: owner)
+        case .repository(let name, let username):
+            self.getRepositoryDetails(name: name, owner: username)
+        case .user(let name, _):
+            getUserDetails(name: name)
         }
     }
 
@@ -32,9 +32,9 @@ final class DetailsInteractor {
         }.disposed(by: disposeBag)
     }
 
-    func getUserDetails(owner: Owner) {
+    func getUserDetails(name: String) {
         SearchNetworkManager
-             .getUserDetails(owner: owner)
+             .getUserDetails(name: name)
              .subscribe { [unowned self] respone in
                  switch respone {
                  case .success(let value):
