@@ -6,6 +6,14 @@ struct Owner: Codable {
     let ownerUrl: URL
     let type: String
     let score: Double?
+    
+    var details: String {
+        guard let score = score else {
+            return ""
+        }
+
+        return "Score: \(String(score))"
+    }
 
     enum CodingKeys: String, CodingKey {
         case name = "login"
