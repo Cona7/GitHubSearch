@@ -66,10 +66,10 @@ extension DetailsViewController {
         tableViewDataSource.present(viewModels: viewModel.cellViewModels, onTableView: tableView)
 
         switch viewModel.state {
-        case .user(let owner):
+        case .user( _, let avatarURL):
             SDWebImageManager
                 .shared
-                .loadImage(with: owner.avatarURL, options: SDWebImageOptions.continueInBackground, progress: nil) { image, _, _, _, _, _  in
+                .loadImage(with: avatarURL, options: SDWebImageOptions.continueInBackground, progress: nil) { image, _, _, _, _, _  in
                     if let image = image {
                         self.imageView.image = image
                     }

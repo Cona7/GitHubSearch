@@ -50,16 +50,22 @@ extension SearchPresenter: SearchViewModelDelegate {
         wireframe.navigate(to: .filter(delegate: self))
     }
 
-    func didTapRepository(model: Repository) {
-        wireframe.navigate(to: .repoDetails(repositoryModel: model))
+    func didTapCell(model: SearchListModel, state: SearchType) {
+        switch state {
+        case .repositories:
+            wireframe.navigate(to: .repoDetails(name: model.title, username: model.username))
+        case .users:
+            wireframe.navigate(to: .userDetails(name: model.username, avatarURL: model.avatarURL))
+        }
     }
 
-    func didTapUser(model: Owner) {
-        wireframe.navigate(to: .userDetails(owner: model))
-    }
-
-    func didTapCellAvatarImage(model: Repository) {
-        wireframe.navigate(to: .userDetails(owner: model.owner))
+    func didTapCellAvatarImage(model: SearchListModel, state: SearchType) {
+        switch state {
+        case .repositories:
+            wireframe.navigate(to: .userDetails(name: model.username, avatarURL: model.avatarURL))
+        case .users:
+            return
+        }
     }
 }
 

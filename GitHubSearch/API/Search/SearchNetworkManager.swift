@@ -61,10 +61,10 @@ class SearchNetworkManager {
         )
     }
 
-    static func getUserDetails(owner: Owner) -> Single<UserDetails> {
+    static func getUserDetails(name: String) -> Single<UserDetails> {
         return NetworkManager
             .performRequest(
-                url: ApplicationManager.shared.host + "/users/\(owner.name)"
+                url: ApplicationManager.shared.host + "/users/\(name)"
         )
     }
 }

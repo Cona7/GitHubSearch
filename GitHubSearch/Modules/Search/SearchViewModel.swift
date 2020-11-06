@@ -1,7 +1,6 @@
 import SimpleDataSource
 
 struct SearchViewModel {
-
     let rightBarButton: BarButtonItem
 
     let searchPlaceholder: String
@@ -11,44 +10,23 @@ struct SearchViewModel {
 
     var cellViewModels: [AnyDequeuableTableViewCellViewModel]
 
-    var state: SearchType
-
     init(model: SearchModel, delegate: SearchViewModelDelegate) {
-        self.rightBarButton = BarButtonItem.create(image: #imageLiteral(resourceName: "filter"), withTapCallback: { [weak delegate] in
-            delegate?.didTapFilter() })
+        self.rightBarButton = BarButtonItem.create(image: #imageLiteral(resourceName: "filter"), withTapCallback: { [weak delegate] in delegate?.didTapFilter() })
 
         self.searchPlaceholder = model.state.placeholder
         self.searchLabel = model.searchLabel
 
         self.shouldClearQuery = model.shouldClearQuery
-
-        if shouldClearQuery {
-            cellViewModels = []
-        } else {
-            switch model.state {
-            case .repositories:
-                self.cellViewModels = model.repositories.map { repositoryModel in
-                    RepositoryTableViewCellViewModel(
-                        imageUrl: repositoryModel.owner.avatarURL,
-                        title: repositoryModel.name,
-                        ownerName: repositoryModel.owner.name,
-                        info: "forks: \(String(repositoryModel.forks)), watchers: \(String(repositoryModel.watchers)), issues: \(String(repositoryModel.issues))",
-                        didTapCell: { delegate.didTapRepository(model: repositoryModel) },
-                        didTapImage: { delegate.didTapCellAvatarImage(model: repositoryModel) }).tableViewPresentable
-                }
-            case .users:
-                self.cellViewModels = model.users.map { userModel in
-                    RepositoryTableViewCellViewModel(
-                        imageUrl: userModel.avatarURL,
-                        title: userModel.type,
-                        ownerName: userModel.name,
-                        info: "Score: \(String(userModel.score!))",
-                        didTapCell: { delegate.didTapUser(model: userModel) },
-                        didTapImage: {}).tableViewPresentable
-                }
-            }
+        cellViewModels = shouldClearQuery
+            ? []
+            : model.searchListModel.map { searchListModel in
+                RepositoryTableViewCellViewModel(
+                    imageUrl: searchListModel.avatarURL,
+                    title: searchListModel.title,
+                    ownerName: searchListModel.username,
+                    info: searchListModel.details,
+                    didTapCell: { delegate.didTapCell(model: searchListModel, state: model.state) },
+                    didTapImage: { delegate.didTapCellAvatarImage(model: searchListModel, state: model.state) }).tableViewPresentable
         }
-
-        self.state = model.state
     }
 }

@@ -37,8 +37,7 @@ extension SearchInteractor: SearchInteractorInterface {
         guard !shouldClearQuery else {
             return searchModel.accept(
                 SearchModel(
-                    users: self.searchModel.value.users,
-                    repositories: self.searchModel.value.repositories,
+                    searchListModel: [],
                     state: filterParameters.searchBy,
                     searchLabel: searchModel.value.searchLabel,
                     shouldClearQuery: shouldClearQuery)
@@ -55,7 +54,11 @@ extension SearchInteractor: SearchInteractorInterface {
                 .subscribe { [unowned self] respone in
                     switch respone {
                     case .success(let value):
-                        self.searchModel.accept(SearchModel(users: self.searchModel.value.users, repositories: value.items, state: filterParameters.searchBy, shouldClearQuery: shouldClearQuery))
+                        self.searchModel.accept(
+                            SearchModel(
+                                searchListModel: value.items.map { SearchListModel.from(model: $0) },
+                                state: filterParameters.searchBy,
+                                shouldClearQuery: shouldClearQuery))
                     case .error(let error):
                         self.errorSubject.onNext(error)
                     }
@@ -67,15 +70,14 @@ extension SearchInteractor: SearchInteractorInterface {
                     switch respone {
                     case .success(let value):
                         self.searchModel.accept(
-                            SearchModel(users: value.items,
-                                        repositories: self.searchModel.value.repositories,
-                                        state: filterParameters.searchBy,
-                                        shouldClearQuery: shouldClearQuery)
-                        )
+                            SearchModel(
+                                searchListModel: value.items.map { SearchListModel.from(model: $0) },
+                                state: filterParameters.searchBy,
+                                shouldClearQuery: shouldClearQuery))
                     case .error(let error):
                         self.errorSubject.onNext(error)
                     }
-            }.disposed(by: disposeBag)
+                }.disposed(by: disposeBag)
         }
     }
 }
