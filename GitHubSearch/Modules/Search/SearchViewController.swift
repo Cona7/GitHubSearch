@@ -7,8 +7,6 @@ final class SearchViewController: ViewController {
 
     var tableViewDataSource = SimpleTableViewDataSource()
 
-    var lastSearchQueryUpdateDate: Date?
-
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
 
@@ -127,6 +125,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.presenter.didTextChangeSearchBar(query: searchText)
     }
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
