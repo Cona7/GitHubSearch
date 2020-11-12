@@ -1,15 +1,21 @@
 platform :ios, '11.0'
 
+use_frameworks! 
+
 target 'GitHubSearch' do
-inhibit_all_warnings!
+    pod 'RxSwift', '5.1.1'
+    pod 'RxCocoa', '5.1.1'
+end
 
 target 'GitHubSearchTests' do
-    inherit! :search_paths
-  end
+  pod 'Nimble'
 
-  target 'GitHubSearchUITests' do
-    inherit! :search_paths
-  end
+  pod 'RxBlocking', '5.1.1'
+  pod 'RxTest', '5.1.1'
+end
+
+target 'GitHubSearchUITests' do
+ inherit! :search_paths
 end
 
 post_install do |pi|
@@ -19,3 +25,4 @@ post_install do |pi|
     end
   end
 end
+
