@@ -24,11 +24,10 @@ class SearchNetworkManager {
         return parameter
     }
 
-    static func getRepositories(query: String, sort: String)
-    -> Single<ListNetworkModel<Repository>> {
+    static func getRepositories(query: String, sort: String) -> Single<ListNetworkModel<Repository>> {
         do {
             let parameters = try self.encode(Query(query: query, sort: sort))
-    
+
             return NetworkManager
                 .performRequest(
                     url: ApplicationManager.shared.host + "/search/repositories",

@@ -37,7 +37,7 @@ extension SearchPresenter: SearchPresenterInterface {
         if query == "" {
             return
         }
-        
+
         let currentDate = Date()
         self.lastSearchQueryUpdateDate = currentDate
 
