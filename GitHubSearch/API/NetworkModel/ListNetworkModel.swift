@@ -1,9 +1,9 @@
 import Foundation
 
-struct RepositoryListNetworkModel: Codable {
+struct ListNetworkModel<T: Codable>: Codable {
     let totalCount: Int
     let isResultIncomplete: Bool
-    let items: [Repository]
+    let items: [T]
 
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"

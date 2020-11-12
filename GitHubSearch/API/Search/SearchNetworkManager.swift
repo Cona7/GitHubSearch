@@ -24,7 +24,8 @@ class SearchNetworkManager {
         return parameter
     }
 
-    static func getRepositories(query: String, sort: String) -> Single<RepositoryListNetworkModel> {
+    static func getRepositories(query: String, sort: String)
+    -> Single<ListNetworkModel<Repository>> {
         do {
             let parameters = try self.encode(Query(query: query, sort: sort))
 
@@ -39,7 +40,7 @@ class SearchNetworkManager {
         }
     }
 
-    static func getUsers(query: String) -> Single<UserListNetworkModel> {
+    static func getUsers(query: String) -> Single<ListNetworkModel<Owner>> {
           do {
             let parameters = try self.encode(Query(query: query, sort: nil))
 

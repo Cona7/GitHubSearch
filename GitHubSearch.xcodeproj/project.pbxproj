@@ -42,7 +42,6 @@
 		1D815786234649FD00D55352 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D815785234649FD00D55352 /* Repository.swift */; };
 		1D81578823464A1D00D55352 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81578723464A1D00D55352 /* Owner.swift */; };
 		1D81578E2347401600D55352 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81578D2347401600D55352 /* SearchModel.swift */; };
-		1D8157902347456200D55352 /* UserListNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81578F2347456200D55352 /* UserListNetworkModel.swift */; };
 		1D9029E7234315A9009C500D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9029E6234315A9009C500D /* AppDelegate.swift */; };
 		1D9029F0234315AB009C500D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D9029EF234315AB009C500D /* Assets.xcassets */; };
 		1D9029F3234315AB009C500D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9029F1234315AB009C500D /* LaunchScreen.storyboard */; };
@@ -66,10 +65,10 @@
 		1DADB30E23437709004DEFC0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB30D23437709004DEFC0 /* NetworkManager.swift */; };
 		1DADB3102343771D004DEFC0 /* ResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB30F2343771D004DEFC0 /* ResponseMapper.swift */; };
 		1DADB31223437875004DEFC0 /* NetworkErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB31123437875004DEFC0 /* NetworkErrorResponse.swift */; };
-		1DADB31523437D05004DEFC0 /* RepositoryListNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB31423437D05004DEFC0 /* RepositoryListNetworkModel.swift */; };
-		1DCD23F02550BC3F009FB24A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCD23EF2550BC3F009FB24A /* SwiftPackageProductDependency */; };
-		1DCD23F62550BCD7009FB24A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCD23F52550BCD7009FB24A /* SwiftPackageProductDependency */; };
-		1DCD23FC2550BD28009FB24A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCD23FB2550BD28009FB24A /* SwiftPackageProductDependency */; };
+		1DCD23F02550BC3F009FB24A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCD23EF2550BC3F009FB24A /* Alamofire */; };
+		1DCD23F62550BCD7009FB24A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCD23F52550BCD7009FB24A /* SDWebImage */; };
+		1DCD23FC2550BD28009FB24A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCD23FB2550BD28009FB24A /* SnapKit */; };
+		1DF7E657255D51370038D970 /* ListNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF7E656255D51370038D970 /* ListNetworkModel.swift */; };
 		65CAB08E1345E5CC62852415 /* Pods_GitHubSearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E7A762204B8A186E0DA781 /* Pods_GitHubSearchTests.framework */; };
 		BD549B4AC4991FAE3564918A /* Pods_GitHubSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39EAE790069E85A1B559CAD /* Pods_GitHubSearchUITests.framework */; };
 /* End PBXBuildFile section */
@@ -129,7 +128,6 @@
 		1D815785234649FD00D55352 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		1D81578723464A1D00D55352 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		1D81578D2347401600D55352 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
-		1D81578F2347456200D55352 /* UserListNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListNetworkModel.swift; sourceTree = "<group>"; };
 		1D9029E3234315A9009C500D /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9029E6234315A9009C500D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D9029EF234315AB009C500D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -160,7 +158,7 @@
 		1DADB30D23437709004DEFC0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1DADB30F2343771D004DEFC0 /* ResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseMapper.swift; sourceTree = "<group>"; };
 		1DADB31123437875004DEFC0 /* NetworkErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorResponse.swift; sourceTree = "<group>"; };
-		1DADB31423437D05004DEFC0 /* RepositoryListNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListNetworkModel.swift; sourceTree = "<group>"; };
+		1DF7E656255D51370038D970 /* ListNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNetworkModel.swift; sourceTree = "<group>"; };
 		312A352D950EC2D2DAA61640 /* Pods-GitHubSearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearchTests.debug.xcconfig"; path = "Target Support Files/Pods-GitHubSearchTests/Pods-GitHubSearchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3992BB38708C5D51E8FBA1C7 /* Pods-GitHubSearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearchUITests.release.xcconfig"; path = "Target Support Files/Pods-GitHubSearchUITests/Pods-GitHubSearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3E171437C929D82EC914AFDE /* Pods-GitHubSearchUITests.qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearchUITests.qa.xcconfig"; path = "Target Support Files/Pods-GitHubSearchUITests/Pods-GitHubSearchUITests.qa.xcconfig"; sourceTree = "<group>"; };
@@ -177,10 +175,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DCD23FC2550BD28009FB24A /* BuildFile in Frameworks */,
+				1DCD23FC2550BD28009FB24A /* SnapKit in Frameworks */,
 				1D8157772345EC7E00D55352 /* TTTAttributedLabel.framework in Frameworks */,
-				1DCD23F02550BC3F009FB24A /* BuildFile in Frameworks */,
-				1DCD23F62550BCD7009FB24A /* BuildFile in Frameworks */,
+				1DCD23F02550BC3F009FB24A /* Alamofire in Frameworks */,
+				1DCD23F62550BCD7009FB24A /* SDWebImage in Frameworks */,
 				09E3B9F4B13772CAD99C68E1 /* Pods_GitHubSearch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,15 +205,15 @@
 		1D2B6B2A2343AB9B0052116A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1D2B6B2B2343ABA40052116A /* UserDetails.swift */,
 				1D2B6B4E234475E50052116A /* SearchType.swift */,
 				1D2B6B5023447C1D0052116A /* SortType.swift */,
 				1D8157612344FEB400D55352 /* FilterType.swift */,
 				1D81577B2346095500D55352 /* DetailsState.swift */,
-				1D8157832346493B00D55352 /* RepositoryDetails.swift */,
+				1D0F4D4F2555719000B2A20C /* SearchListModel.swift */,
 				1D815785234649FD00D55352 /* Repository.swift */,
 				1D81578723464A1D00D55352 /* Owner.swift */,
-				1D0F4D4F2555719000B2A20C /* SearchListModel.swift */,
+				1D8157832346493B00D55352 /* RepositoryDetails.swift */,
+				1D2B6B2B2343ABA40052116A /* UserDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -466,8 +464,7 @@
 		1DADB31323437CEF004DEFC0 /* NetworkModel */ = {
 			isa = PBXGroup;
 			children = (
-				1DADB31423437D05004DEFC0 /* RepositoryListNetworkModel.swift */,
-				1D81578F2347456200D55352 /* UserListNetworkModel.swift */,
+				1DF7E656255D51370038D970 /* ListNetworkModel.swift */,
 			);
 			path = NetworkModel;
 			sourceTree = "<group>";
@@ -509,9 +506,9 @@
 			);
 			name = GitHubSearch;
 			packageProductDependencies = (
-				1DCD23EF2550BC3F009FB24A /* SwiftPackageProductDependency */,
-				1DCD23F52550BCD7009FB24A /* SwiftPackageProductDependency */,
-				1DCD23FB2550BD28009FB24A /* SwiftPackageProductDependency */,
+				1DCD23EF2550BC3F009FB24A /* Alamofire */,
+				1DCD23F52550BCD7009FB24A /* SDWebImage */,
+				1DCD23FB2550BD28009FB24A /* SnapKit */,
 			);
 			productName = GitHubSearch;
 			productReference = 1D9029E3234315A9009C500D /* GitHubSearch.app */;
@@ -589,9 +586,9 @@
 			);
 			mainGroup = 1D9029DA234315A9009C500D;
 			packageReferences = (
-				1DCD23EE2550BC3F009FB24A /* RemoteSwiftPackageReference */,
-				1DCD23F42550BCD7009FB24A /* RemoteSwiftPackageReference */,
-				1DCD23FA2550BD28009FB24A /* RemoteSwiftPackageReference */,
+				1DCD23EE2550BC3F009FB24A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1DCD23F42550BCD7009FB24A /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				1DCD23FA2550BD28009FB24A /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 1D9029E4234315A9009C500D /* Products */;
 			projectDirPath = "";
@@ -794,8 +791,8 @@
 				1D81578823464A1D00D55352 /* Owner.swift in Sources */,
 				1D2B6B4D234473CB0052116A /* UISegmentedControl.swift in Sources */,
 				1DADB30523434446004DEFC0 /* ColorManager.swift in Sources */,
-				1D8157902347456200D55352 /* UserListNetworkModel.swift in Sources */,
 				1D2B6B4F234475E50052116A /* SearchType.swift in Sources */,
+				1DF7E657255D51370038D970 /* ListNetworkModel.swift in Sources */,
 				1DADB30E23437709004DEFC0 /* NetworkManager.swift in Sources */,
 				1D2B6B5323447DA80052116A /* FilterParameters.swift in Sources */,
 				1D2B6B3F2343F37A0052116A /* FilterPresenter.swift in Sources */,
@@ -810,7 +807,6 @@
 				1D902A1823431679009C500D /* ApplicationManager.swift in Sources */,
 				1D815770234506A200D55352 /* DetailsViewModel.swift in Sources */,
 				1D815786234649FD00D55352 /* Repository.swift in Sources */,
-				1DADB31523437D05004DEFC0 /* RepositoryListNetworkModel.swift in Sources */,
 				1D2B6B4B23446F3A0052116A /* FilterTableViewCell.swift in Sources */,
 				1D2B6B2923439F940052116A /* NetworkError.swift in Sources */,
 				1DADB2DB234319B5004DEFC0 /* SearchInterfaces.swift in Sources */,
@@ -1308,7 +1304,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1DCD23EE2550BC3F009FB24A /* RemoteSwiftPackageReference */ = {
+		1DCD23EE2550BC3F009FB24A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -1316,7 +1312,7 @@
 				minimumVersion = 4.9.0;
 			};
 		};
-		1DCD23F42550BCD7009FB24A /* RemoteSwiftPackageReference */ = {
+		1DCD23F42550BCD7009FB24A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
 			requirement = {
@@ -1324,7 +1320,7 @@
 				minimumVersion = 5.9.4;
 			};
 		};
-		1DCD23FA2550BD28009FB24A /* RemoteSwiftPackageReference */ = {
+		1DCD23FA2550BD28009FB24A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -1335,19 +1331,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1DCD23EF2550BC3F009FB24A /* SwiftPackageProductDependency */ = {
+		1DCD23EF2550BC3F009FB24A /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1DCD23EE2550BC3F009FB24A /* RemoteSwiftPackageReference */;
+			package = 1DCD23EE2550BC3F009FB24A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		1DCD23F52550BCD7009FB24A /* SwiftPackageProductDependency */ = {
+		1DCD23F52550BCD7009FB24A /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1DCD23F42550BCD7009FB24A /* RemoteSwiftPackageReference */;
+			package = 1DCD23F42550BCD7009FB24A /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		1DCD23FB2550BD28009FB24A /* SwiftPackageProductDependency */ = {
+		1DCD23FB2550BD28009FB24A /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1DCD23FA2550BD28009FB24A /* RemoteSwiftPackageReference */;
+			package = 1DCD23FA2550BD28009FB24A /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
