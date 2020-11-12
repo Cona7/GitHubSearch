@@ -15,3 +15,21 @@ struct Repository: Codable {
         case issues = "open_issues_count"
     }
 }
+
+extension Repository: SearchListModel {
+    var title: String {
+        return name
+    }
+
+    var imageURL: URL? {
+        return owner.avatarURL
+    }
+
+    var username: String {
+        return owner.name
+    }
+
+    var details: String {
+        return "forks: \(String(forks)), watchers: \(String(watchers)), issues: \(String(issues))"
+    }
+}

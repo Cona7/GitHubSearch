@@ -24,60 +24,59 @@ extension SearchInteractor: SearchInteractorInterface {
     }
 
     func getEntities() {
-        getEntities(query: self.query)
+        let filterParameters = FilterParametersDataSource.shared.filterParameters
+        let shouldClearList = filterParameters.searchBy != searchModel.value.state
+
+        if shouldClearList {
+            refreshSearchModel(items: [], state: filterParameters.searchBy, shouldClearQuery: true)
+        } else {
+            getEntities(query: self.query)
+        }
     }
 
     func getEntities(query: String) {
         self.query = query
 
         let filterParameters = FilterParametersDataSource.shared.filterParameters
-
-        let shouldClearQuery = filterParameters.searchBy != searchModel.value.state
-
-        guard !shouldClearQuery else {
-            return searchModel.accept(
-                SearchModel(
-                    searchListModel: [],
-                    state: filterParameters.searchBy,
-                    searchLabel: searchModel.value.searchLabel,
-                    shouldClearQuery: shouldClearQuery)
-            )
+        switch filterParameters.searchBy {
+        case .repositories:
+            getRepositories(query: query, sortBy: filterParameters.sortBy.query)
+        case .users:
+            getUsers(query: query)
         }
+    }
 
-        if query == "" {
-            return
-        }
+    func getRepositories(query: String, sortBy: String) {
+        SearchNetworkManager
+            .getRepositories(query: query, sort: sortBy)
+            .subscribe { [unowned self] respone in
+                switch respone {
+                case .success(let value):
+                    self.refreshSearchModel(items: value.items)
+                case .error(let error):
+                    self.errorSubject.onNext(error)
+                }
+        }.disposed(by: disposeBag)
+    }
 
-        if filterParameters.searchBy == .repositories {
-            SearchNetworkManager
-                .getRepositories(query: query, sort: filterParameters.sortBy.query)
-                .subscribe { [unowned self] respone in
-                    switch respone {
-                    case .success(let value):
-                        self.searchModel.accept(
-                            SearchModel(
-                                searchListModel: value.items.map { SearchListModel.from(model: $0) },
-                                state: filterParameters.searchBy,
-                                shouldClearQuery: shouldClearQuery))
-                    case .error(let error):
-                        self.errorSubject.onNext(error)
-                    }
+    func getUsers(query: String) {
+        SearchNetworkManager
+            .getUsers(query: query)
+            .subscribe { [unowned self] respone in
+                switch respone {
+                case .success(let value):
+                    self.refreshSearchModel(items: value.items)
+                case .error(let error):
+                    self.errorSubject.onNext(error)
+                }
             }.disposed(by: disposeBag)
-        } else {
-            SearchNetworkManager
-                .getUsers(query: query)
-                .subscribe { [unowned self] respone in
-                    switch respone {
-                    case .success(let value):
-                        self.searchModel.accept(
-                            SearchModel(
-                                searchListModel: value.items.map { SearchListModel.from(model: $0) },
-                                state: filterParameters.searchBy,
-                                shouldClearQuery: shouldClearQuery))
-                    case .error(let error):
-                        self.errorSubject.onNext(error)
-                    }
-                }.disposed(by: disposeBag)
-        }
+    }
+
+    func refreshSearchModel(items: [SearchListModel], state: SearchType? = nil, shouldClearQuery: Bool = false) {
+        searchModel.accept(
+            SearchModel(
+                searchListModel: items,
+                state: state ?? searchModel.value.state,
+                shouldClearQuery: shouldClearQuery))
     }
 }

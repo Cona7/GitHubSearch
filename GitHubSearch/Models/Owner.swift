@@ -15,3 +15,27 @@ struct Owner: Codable {
         case score
     }
 }
+
+extension Owner: SearchListModel {
+    var title: String {
+        return type
+    }
+    
+    var imageURL: URL? {
+        return avatarURL
+    }
+    
+    var username: String {
+        return name
+    }
+    
+    var details: String {
+        if let score = score {
+            return "Score: \(String(score))"
+        } else {
+            return ""
+        }
+    }
+    
+    
+}

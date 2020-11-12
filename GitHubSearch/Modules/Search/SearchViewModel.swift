@@ -17,11 +17,9 @@ struct SearchViewModel {
         self.searchLabel = model.searchLabel
 
         self.shouldClearQuery = model.shouldClearQuery
-        cellViewModels = shouldClearQuery
-            ? []
-            : model.searchListModel.map { searchListModel in
+        cellViewModels = model.searchListModel.map { searchListModel in
                 RepositoryTableViewCellViewModel(
-                    imageUrl: searchListModel.avatarURL,
+                    imageUrl: searchListModel.imageURL,
                     title: searchListModel.title,
                     ownerName: searchListModel.username,
                     info: searchListModel.details,

@@ -34,6 +34,10 @@ extension SearchPresenter: SearchPresenterInterface {
     }
 
     func didTextChangeSearchBar(query: String) {
+        if query == "" {
+            return
+        }
+        
         let currentDate = Date()
         self.lastSearchQueryUpdateDate = currentDate
 
@@ -55,14 +59,14 @@ extension SearchPresenter: SearchViewModelDelegate {
         case .repositories:
             wireframe.navigate(to: .repoDetails(name: model.title, username: model.username))
         case .users:
-            wireframe.navigate(to: .userDetails(name: model.username, avatarURL: model.avatarURL))
+            wireframe.navigate(to: .userDetails(name: model.username, avatarURL: model.imageURL))
         }
     }
 
     func didTapCellAvatarImage(model: SearchListModel, state: SearchType) {
         switch state {
         case .repositories:
-            wireframe.navigate(to: .userDetails(name: model.username, avatarURL: model.avatarURL))
+            wireframe.navigate(to: .userDetails(name: model.username, avatarURL: model.imageURL))
         case .users:
             return
         }
