@@ -1,12 +1,11 @@
 # GitHubSearch
-GitHub iOS client written in Swift using VIPER architecture.
+GitHub client written in Swift using VIPER architecture.
 
 ## Features
-- Searching for repositories and users using GitHub API.
+- Searching repositories and users using GitHub API.
 - Showing repository or user details
 
 ## Technologies 
-- VIPER architecture
 - Networking (Alamofire).
 - Async workflow (RxSwift)
 - Programmatically UI (SnapKit).
