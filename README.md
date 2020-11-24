@@ -1,7 +1,24 @@
 # GitHubSearch
-Search GitHub's repositories or users and display details.
+GitHub iOS client written in Swift using VIPER architecture.
 
-Technical details:
-Using VIPER architecture.
-Using following frameworks: RxSwift, Alamofire, SnapKit, Nimble.
-Creating UI programmatically using SnapKit.
+## Features
+- Searching for repositories and users using GitHub API.
+- Showing repository or user details
+
+## Technologies 
+- VIPER architecture
+- Networking (Alamofire).
+- Async workflow (RxSwift)
+- Programmatically UI (SnapKit).
+- SwiftLint - A tool to enforce Swift style and conventions.
+
+## Screenshots 
+
+<img width="300" alt="Screenshot 2020-11-24 at 10 26 44"
+src="https://user-images.githubusercontent.com/8843138/100075204-f39e7e80-2e3f-11eb-8880-138bde27a8a5.png">
+
+## TODO
+- [x] Add pagination
+- [x] Add activity indicator
+- [x] Better design
+- [x] Better filtering user/repo
