@@ -3,7 +3,7 @@ import SwiftUI
 import RxSwift
 import SDWebImage
 
-class DetailsViewModel2: ObservableObject {
+class UserDetailsViewModel: ObservableObject {
     let disposeBag = DisposeBag()
 
     @Published var avatarURL = ""

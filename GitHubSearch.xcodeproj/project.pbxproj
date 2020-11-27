@@ -10,7 +10,7 @@
 		09E3B9F4B13772CAD99C68E1 /* Pods_GitHubSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9087E086299E6EC95EFC8D /* Pods_GitHubSearch.framework */; };
 		1D0F4D502555719000B2A20C /* SearchListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F4D4F2555719000B2A20C /* SearchListModel.swift */; };
 		1D13BC84256E44E000027E04 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D13BC83256E44E000027E04 /* DetailsView.swift */; };
-		1D13BCB3256E7CA500027E04 /* DetailsViewModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D13BCB2256E7CA500027E04 /* DetailsViewModel2.swift */; };
+		1D13BCB3256E7CA500027E04 /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D13BCB2256E7CA500027E04 /* UserDetailsViewModel.swift */; };
 		1D13BCB9256FA24E00027E04 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D13BCB8256FA24E00027E04 /* RemoteImage.swift */; };
 		1D2B6B2923439F940052116A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B6B2823439F940052116A /* NetworkError.swift */; };
 		1D2B6B2C2343ABA40052116A /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B6B2B2343ABA40052116A /* UserDetails.swift */; };
@@ -53,6 +53,8 @@
 		1D902A1823431679009C500D /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D902A1723431679009C500D /* ApplicationManager.swift */; };
 		1DA6998B2570E2F00044A2A7 /* DetailsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6998A2570E2F00044A2A7 /* DetailsButton.swift */; };
 		1DA699942570EAB60044A2A7 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA699932570EAB60044A2A7 /* SafariView.swift */; };
+		1DA699A02570F6A80044A2A7 /* RepositoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6999F2570F6A80044A2A7 /* RepositoryDetailsView.swift */; };
+		1DA699A52570F7860044A2A7 /* RepositoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA699A42570F7860044A2A7 /* RepositoryDetailsViewModel.swift */; };
 		1DADB2DB234319B5004DEFC0 /* SearchInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB2D5234319B5004DEFC0 /* SearchInterfaces.swift */; };
 		1DADB2DC234319B5004DEFC0 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB2D6234319B5004DEFC0 /* SearchPresenter.swift */; };
 		1DADB2DD234319B5004DEFC0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB2D7234319B5004DEFC0 /* SearchViewController.swift */; };
@@ -101,7 +103,7 @@
 		10DC48A3AC35E74230538872 /* Pods-GitHubSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearch.debug.xcconfig"; path = "Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		1D0F4D4F2555719000B2A20C /* SearchListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListModel.swift; sourceTree = "<group>"; };
 		1D13BC83256E44E000027E04 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
-		1D13BCB2256E7CA500027E04 /* DetailsViewModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel2.swift; sourceTree = "<group>"; };
+		1D13BCB2256E7CA500027E04 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
 		1D13BCB8256FA24E00027E04 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		1D2B6B2823439F940052116A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		1D2B6B2B2343ABA40052116A /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
@@ -150,6 +152,8 @@
 		1D902A1723431679009C500D /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		1DA6998A2570E2F00044A2A7 /* DetailsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsButton.swift; sourceTree = "<group>"; };
 		1DA699932570EAB60044A2A7 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		1DA6999F2570F6A80044A2A7 /* RepositoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsView.swift; sourceTree = "<group>"; };
+		1DA699A42570F7860044A2A7 /* RepositoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsViewModel.swift; sourceTree = "<group>"; };
 		1DADB2D5234319B5004DEFC0 /* SearchInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInterfaces.swift; sourceTree = "<group>"; };
 		1DADB2D6234319B5004DEFC0 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		1DADB2D7234319B5004DEFC0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -291,7 +295,7 @@
 			path = DataSources;
 			sourceTree = "<group>";
 		};
-		1D8157652345065A00D55352 /* Details */ = {
+		1D8157652345065A00D55352 /* UserDetails */ = {
 			isa = PBXGroup;
 			children = (
 				1D815766234506A200D55352 /* DetailsInterfaces.swift */,
@@ -302,9 +306,9 @@
 				1D81576A234506A200D55352 /* DetailsViewModel.swift */,
 				1D8157742345C2AB00D55352 /* DetailsModel.swift */,
 				1D13BC83256E44E000027E04 /* DetailsView.swift */,
-				1D13BCB2256E7CA500027E04 /* DetailsViewModel2.swift */,
+				1D13BCB2256E7CA500027E04 /* UserDetailsViewModel.swift */,
 			);
-			path = Details;
+			path = UserDetails;
 			sourceTree = "<group>";
 		};
 		1D9029DA234315A9009C500D = {
@@ -380,9 +384,10 @@
 		1D902A19234317C4009C500D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				1D8157652345065A00D55352 /* Details */,
-				1D2B6B372343F3690052116A /* Filter */,
 				1D2B6B322343E58F0052116A /* Search */,
+				1D2B6B372343F3690052116A /* Filter */,
+				1DA6999B2570F5520044A2A7 /* RepositoryDetails */,
+				1D8157652345065A00D55352 /* UserDetails */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -393,6 +398,15 @@
 				1DA699932570EAB60044A2A7 /* SafariView.swift */,
 			);
 			path = UIKitComponents;
+			sourceTree = "<group>";
+		};
+		1DA6999B2570F5520044A2A7 /* RepositoryDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1DA6999F2570F6A80044A2A7 /* RepositoryDetailsView.swift */,
+				1DA699A42570F7860044A2A7 /* RepositoryDetailsViewModel.swift */,
+			);
+			path = RepositoryDetails;
 			sourceTree = "<group>";
 		};
 		1DADB2E223432207004DEFC0 /* Frameworks */ = {
@@ -831,7 +845,7 @@
 				1D2B6B422343F37A0052116A /* FilterViewModel.swift in Sources */,
 				1D81578223463DC500D55352 /* LinkedDetailsTableViewCell.swift in Sources */,
 				1D81577E23461B8A00D55352 /* TitleDetailsTableViewCell.swift in Sources */,
-				1D13BCB3256E7CA500027E04 /* DetailsViewModel2.swift in Sources */,
+				1D13BCB3256E7CA500027E04 /* UserDetailsViewModel.swift in Sources */,
 				1D815771234506A200D55352 /* DetailsWireframe.swift in Sources */,
 				1DADB2DC234319B5004DEFC0 /* SearchPresenter.swift in Sources */,
 				1D81576C234506A200D55352 /* DetailsInterfaces.swift in Sources */,
@@ -840,6 +854,7 @@
 				1D815770234506A200D55352 /* DetailsViewModel.swift in Sources */,
 				1D815786234649FD00D55352 /* Repository.swift in Sources */,
 				1D2B6B4B23446F3A0052116A /* FilterTableViewCell.swift in Sources */,
+				1DA699A02570F6A80044A2A7 /* RepositoryDetailsView.swift in Sources */,
 				1D2B6B2923439F940052116A /* NetworkError.swift in Sources */,
 				1DADB2DB234319B5004DEFC0 /* SearchInterfaces.swift in Sources */,
 				1DADB303234341FA004DEFC0 /* FontManager.swift in Sources */,
@@ -847,6 +862,7 @@
 				1D2B6B402343F37A0052116A /* FilterViewController.swift in Sources */,
 				1D13BC84256E44E000027E04 /* DetailsView.swift in Sources */,
 				1D2B6B3E2343F37A0052116A /* FilterInterfaces.swift in Sources */,
+				1DA699A52570F7860044A2A7 /* RepositoryDetailsViewModel.swift in Sources */,
 				1DA6998B2570E2F00044A2A7 /* DetailsButton.swift in Sources */,
 				1D81578E2347401600D55352 /* SearchModel.swift in Sources */,
 				1D2B6B362343F0DE0052116A /* BarButton.swift in Sources */,

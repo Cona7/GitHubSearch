@@ -3,7 +3,7 @@ import SDWebImage
 
 struct DetailsView: View {
 
-    @ObservedObject var viewModel: DetailsViewModel2
+    @ObservedObject var viewModel: UserDetailsViewModel
     @State var isShowingSafariView = false
 
     var body: some View {
@@ -46,7 +46,7 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(viewModel: DetailsViewModel2(name: "Cona7"))
+        DetailsView(viewModel: UserDetailsViewModel(name: "Cona7"))
     }
 }
 
