@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		09E3B9F4B13772CAD99C68E1 /* Pods_GitHubSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9087E086299E6EC95EFC8D /* Pods_GitHubSearch.framework */; };
 		1D0F4D502555719000B2A20C /* SearchListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F4D4F2555719000B2A20C /* SearchListModel.swift */; };
+		1D13BC84256E44E000027E04 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D13BC83256E44E000027E04 /* DetailsView.swift */; };
+		1D13BCB3256E7CA500027E04 /* DetailsViewModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D13BCB2256E7CA500027E04 /* DetailsViewModel2.swift */; };
+		1D13BCB9256FA24E00027E04 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D13BCB8256FA24E00027E04 /* RemoteImage.swift */; };
 		1D2B6B2923439F940052116A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B6B2823439F940052116A /* NetworkError.swift */; };
 		1D2B6B2C2343ABA40052116A /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B6B2B2343ABA40052116A /* UserDetails.swift */; };
 		1D2B6B362343F0DE0052116A /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B6B352343F0DE0052116A /* BarButton.swift */; };
@@ -48,6 +51,8 @@
 		1D9029FE234315AB009C500D /* GitHubSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9029FD234315AB009C500D /* GitHubSearchTests.swift */; };
 		1D902A09234315AB009C500D /* GitHubSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D902A08234315AB009C500D /* GitHubSearchUITests.swift */; };
 		1D902A1823431679009C500D /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D902A1723431679009C500D /* ApplicationManager.swift */; };
+		1DA6998B2570E2F00044A2A7 /* DetailsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6998A2570E2F00044A2A7 /* DetailsButton.swift */; };
+		1DA699942570EAB60044A2A7 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA699932570EAB60044A2A7 /* SafariView.swift */; };
 		1DADB2DB234319B5004DEFC0 /* SearchInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB2D5234319B5004DEFC0 /* SearchInterfaces.swift */; };
 		1DADB2DC234319B5004DEFC0 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB2D6234319B5004DEFC0 /* SearchPresenter.swift */; };
 		1DADB2DD234319B5004DEFC0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADB2D7234319B5004DEFC0 /* SearchViewController.swift */; };
@@ -95,6 +100,9 @@
 		0F9087E086299E6EC95EFC8D /* Pods_GitHubSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10DC48A3AC35E74230538872 /* Pods-GitHubSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSearch.debug.xcconfig"; path = "Target Support Files/Pods-GitHubSearch/Pods-GitHubSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		1D0F4D4F2555719000B2A20C /* SearchListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListModel.swift; sourceTree = "<group>"; };
+		1D13BC83256E44E000027E04 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		1D13BCB2256E7CA500027E04 /* DetailsViewModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel2.swift; sourceTree = "<group>"; };
+		1D13BCB8256FA24E00027E04 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		1D2B6B2823439F940052116A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		1D2B6B2B2343ABA40052116A /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		1D2B6B352343F0DE0052116A /* BarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
@@ -140,6 +148,8 @@
 		1D902A08234315AB009C500D /* GitHubSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchUITests.swift; sourceTree = "<group>"; };
 		1D902A0A234315AB009C500D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D902A1723431679009C500D /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
+		1DA6998A2570E2F00044A2A7 /* DetailsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsButton.swift; sourceTree = "<group>"; };
+		1DA699932570EAB60044A2A7 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		1DADB2D5234319B5004DEFC0 /* SearchInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInterfaces.swift; sourceTree = "<group>"; };
 		1DADB2D6234319B5004DEFC0 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		1DADB2D7234319B5004DEFC0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +212,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D13BCB7256FA24000027E04 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				1D13BCB8256FA24E00027E04 /* RemoteImage.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		1D2B6B2A2343AB9B0052116A /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +253,7 @@
 		1D2B6B332343F0CC0052116A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D13BCB7256FA24000027E04 /* Image */,
 				1D2B6B342343F0D10052116A /* Buttons */,
 				1D8157792345ECFC00D55352 /* LinkedLabel.swift */,
 			);
@@ -245,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				1D2B6B352343F0DE0052116A /* BarButton.swift */,
+				1DA6998A2570E2F00044A2A7 /* DetailsButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -281,6 +301,8 @@
 				1D815769234506A200D55352 /* DetailsInteractor.swift */,
 				1D81576A234506A200D55352 /* DetailsViewModel.swift */,
 				1D8157742345C2AB00D55352 /* DetailsModel.swift */,
+				1D13BC83256E44E000027E04 /* DetailsView.swift */,
+				1D13BCB2256E7CA500027E04 /* DetailsViewModel2.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -310,6 +332,7 @@
 		1D9029E5234315A9009C500D /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
+				1DA699922570EAA40044A2A7 /* UIKitComponents */,
 				1D2B6B542344A0F40052116A /* DataSources */,
 				1D2B6B2A2343AB9B0052116A /* Models */,
 				1DADB309234375CD004DEFC0 /* API */,
@@ -362,6 +385,14 @@
 				1D2B6B322343E58F0052116A /* Search */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		1DA699922570EAA40044A2A7 /* UIKitComponents */ = {
+			isa = PBXGroup;
+			children = (
+				1DA699932570EAB60044A2A7 /* SafariView.swift */,
+			);
+			path = UIKitComponents;
 			sourceTree = "<group>";
 		};
 		1DADB2E223432207004DEFC0 /* Frameworks */ = {
@@ -666,7 +697,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint autocorrect\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		23B818E35ADA1C5E44D04D4A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -800,6 +831,7 @@
 				1D2B6B422343F37A0052116A /* FilterViewModel.swift in Sources */,
 				1D81578223463DC500D55352 /* LinkedDetailsTableViewCell.swift in Sources */,
 				1D81577E23461B8A00D55352 /* TitleDetailsTableViewCell.swift in Sources */,
+				1D13BCB3256E7CA500027E04 /* DetailsViewModel2.swift in Sources */,
 				1D815771234506A200D55352 /* DetailsWireframe.swift in Sources */,
 				1DADB2DC234319B5004DEFC0 /* SearchPresenter.swift in Sources */,
 				1D81576C234506A200D55352 /* DetailsInterfaces.swift in Sources */,
@@ -813,9 +845,12 @@
 				1DADB303234341FA004DEFC0 /* FontManager.swift in Sources */,
 				1D2B6B412343F37A0052116A /* FilterInteractor.swift in Sources */,
 				1D2B6B402343F37A0052116A /* FilterViewController.swift in Sources */,
+				1D13BC84256E44E000027E04 /* DetailsView.swift in Sources */,
 				1D2B6B3E2343F37A0052116A /* FilterInterfaces.swift in Sources */,
+				1DA6998B2570E2F00044A2A7 /* DetailsButton.swift in Sources */,
 				1D81578E2347401600D55352 /* SearchModel.swift in Sources */,
 				1D2B6B362343F0DE0052116A /* BarButton.swift in Sources */,
+				1DA699942570EAB60044A2A7 /* SafariView.swift in Sources */,
 				1D81578023461D9A00D55352 /* BasicDetailsTableViewCell.swift in Sources */,
 				1DADB3102343771D004DEFC0 /* ResponseMapper.swift in Sources */,
 				1D2B6B5123447C1D0052116A /* SortType.swift in Sources */,
@@ -824,6 +859,7 @@
 				1DADB2E0234319B5004DEFC0 /* SearchWireframe.swift in Sources */,
 				1D2B6B432343F37A0052116A /* FilterWireframe.swift in Sources */,
 				1D0F4D502555719000B2A20C /* SearchListModel.swift in Sources */,
+				1D13BCB9256FA24E00027E04 /* RemoteImage.swift in Sources */,
 				1D81576F234506A200D55352 /* DetailsInteractor.swift in Sources */,
 				1D8157622344FEB400D55352 /* FilterType.swift in Sources */,
 				1D81577C2346095500D55352 /* DetailsState.swift in Sources */,
@@ -925,7 +961,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -980,7 +1016,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1003,7 +1039,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GitHubSearch/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1030,7 +1066,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GitHubSearch/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1179,7 +1215,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1202,7 +1238,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GitHubSearch/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

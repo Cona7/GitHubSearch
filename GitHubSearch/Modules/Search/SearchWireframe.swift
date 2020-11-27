@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI
 
 final class SearchWireframe: Wireframe {
     static func setupModule() -> UIViewController {
@@ -22,7 +23,11 @@ extension SearchWireframe: SearchWireframeInterface {
         case .repoDetails(let name, let username):
             navigationController?.pushViewController(DetailsWireframe.setupModule(detailsState: .repository(name: name, username: username)), animated: true)
         case .userDetails(let name, let avatarURL):
-            navigationController?.pushViewController(DetailsWireframe.setupModule(detailsState: .user(name: name, avatarURL: avatarURL)), animated: true)
+
+            let swiftUIView = DetailsView(viewModel: DetailsViewModel2(name: name))// swiftUIView is View
+            let viewCtrl = UIHostingController(rootView: swiftUIView)
+
+            navigationController?.pushViewController(viewCtrl, animated: true)
         }
     }
 }

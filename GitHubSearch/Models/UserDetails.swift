@@ -10,6 +10,8 @@ struct UserDetails: Codable {
     let name: String?
 
     let followers: Int
+    let following: Int
+    let publicRepos: Int
 
     enum CodingKeys: String, CodingKey {
         case login = "login"
@@ -18,5 +20,7 @@ struct UserDetails: Codable {
         case type
         case name
         case followers
+        case following
+        case publicRepos = "public_repos"
     }
 }
